@@ -1,0 +1,26 @@
+' Gambas class file
+
+
+
+Public Sub Form_Open()
+Dim f1 As File
+f1 = Open "~/on" For Create 
+Close f1
+f1 = Open "~/off" For Create
+Close f1
+f1.Save("~/on", "ON\n")
+f1.Save("~/off", "OFF\n")
+
+
+End
+
+Public Sub Button1_Click()
+  Shell "netcat 127.0.0.1 8080 < ~/on"
+  Print "on"
+End
+
+Public Sub Button2_Click()
+Shell "netcat 127.0.0.1 8080 < ~/off"
+Print "off"
+
+End
