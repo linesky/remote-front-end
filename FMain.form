@@ -2,6 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,50,50)
+  Font = Font["-2"]
   Background = &HBFBFBF&
   Text = ("remote")
   { Button1 Button
